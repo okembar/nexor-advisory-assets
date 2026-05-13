@@ -1,0 +1,199 @@
+{
+  "name": "NEXOR — Formation Automation Complète",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": { "interval": [{ "field": "cronExpression", "expression": "50 5 * * 1-5" }] }
+      },
+      "name": "⏰ Trigger Matin Alegria (5h50)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [240, 200],
+      "id": "trigger-alegria"
+    },
+    {
+      "parameters": {
+        "rule": { "interval": [{ "field": "cronExpression", "expression": "50 19 * * 1-5" }] }
+      },
+      "name": "⏰ Trigger Soir Théo (19h50)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [240, 400],
+      "id": "trigger-theo"
+    },
+    {
+      "parameters": {
+        "rule": { "interval": [{ "field": "cronExpression", "expression": "50 7 * * 6,0" }] }
+      },
+      "name": "⏰ Trigger Weekend (7h50)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [240, 600],
+      "id": "trigger-weekend"
+    },
+    {
+      "parameters": {
+        "rule": { "interval": [{ "field": "cronExpression", "expression": "0 21 * * 0" }] }
+      },
+      "name": "⏰ Bilan Hebdo (Dim 21h)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [240, 800],
+      "id": "trigger-bilan"
+    },
+    {
+      "parameters": {
+        "jsCode": "const now = new Date();\nconst dayOfWeek = now.getDay();\nconst startDate = new Date('2026-05-12');\nconst diffDays = Math.floor((now - startDate) / (1000*60*60*24));\nconst weekNum = Math.floor(diffDays / 7) + 1;\nconst dayNum = (dayOfWeek + 6) % 7;\nconst days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];\n\nconst curriculum = {\n  alegria: {\n    1: {\n      1: { theme: 'n8n — Interface & 1er workflow', objectif: 'Comprendre interface n8n, créer premier workflow', etapes: ['Ouvrir n8n (10.30.20.2)', 'Découvrir Canvas, nodes, connexions', 'Créer un trigger Manuel', 'Ajouter un node Telegram', 'Exécuter et voir le résultat'], livrable: 'Workflow Bonjour monde fonctionnel' },\n      2: { theme: 'n8n — Scheduler & automatisation', objectif: 'Déclencher automatiquement un workflow', etapes: ['Node Scheduler : 6h45 chaque matin', 'Node Set : message variable', 'Node IF : condition simple', 'Envoyer message différent selon le jour', 'Tester'], livrable: 'Workflow Bon matin automatique' },\n      3: { theme: 'n8n — HTTP Request & APIs', objectif: 'Appeler une API externe et utiliser les données', etapes: ['Explication API simple', 'Node HTTP Request GET', 'API météo wttr.in', 'Extraire les données JSON', 'Formater et envoyer'], livrable: 'Workflow Météo du jour' },\n      4: { theme: 'n8n — Webhook & formulaire', objectif: 'Recevoir données dun formulaire et les traiter', etapes: ['Node Webhook : créer URL', 'Formulaire simple (Tally)', 'Extraire les champs', 'Sauvegarder dans Notion', 'Confirmation automatique'], livrable: 'Formulaire → n8n → Notion + confirmation' },\n      5: { theme: 'PROJET S1 — Workflow complet', objectif: 'Assembler tout ce qui a été appris', etapes: ['Choisir un cas dusage', 'Dessiner sur papier', 'Implémenter en n8n (30 min)', 'Tester et corriger (20 min)', 'Présenter à voix haute (10 min)'], livrable: 'Mini-projet S1 fonctionnel' }\n    },\n    2: {\n      1: { theme: 'Claude API — Introduction', objectif: 'Premier appel IA dans n8n', etapes: ['Créer compte Anthropic', 'HTTP Request vers api.anthropic.com', 'Envoyer un message simple', 'Voir la réponse', 'Modifier le prompt'], livrable: 'Premier appel Claude API' },\n      2: { theme: 'Claude API — Générer du texte', objectif: 'Générer emails et résumés automatiquement', etapes: ['System prompt : rôle de lIA', 'User prompt : demande précise', 'Générer un email professionnel', 'Résumer un texte long', 'Varier le ton'], livrable: 'Workflow résumé automatique' },\n      3: { theme: 'Claude API — Analyser des données', objectif: 'Envoyer un fichier et obtenir une analyse', etapes: ['CSV → texte pour Claude', 'Demander les 3 points importants', 'Structurer la réponse', 'Appliquer sur vraie donnée', 'Sauvegarder dans Notion'], livrable: 'Workflow analyse données → Notion' },\n      4: { theme: 'Claude API — Créer du contenu', objectif: 'Générer posts LinkedIn automatiquement', etapes: ['Prompt post LinkedIn', 'Ajouter émojis et structure', 'Varier le sujet', 'Workflow thème → post prêt', 'Programmer à heure fixe'], livrable: 'Workflow générateur de posts LinkedIn' },\n      5: { theme: 'PROJET S2 — Agent IA simple', objectif: 'Premier agent IA qui répond à des questions', etapes: ['Définir le cas dusage', 'Rédiger le system prompt', 'Créer le workflow complet', 'Tester avec 5 questions', 'Présenter le résultat'], livrable: 'Agent IA fonctionnel' }\n    }\n  }\n};\n\nconst week = Math.min(weekNum, 4);\nconst day = Math.min(dayNum + 1, 5);\nconst session = curriculum.alegria?.[week]?.[day] || { theme: 'Révision libre', objectif: 'Consolider les acquis', etapes: ['Refaire un workflow de la semaine passée', 'Identifier les points flous', 'Les corriger'], livrable: 'Workflow amélioré' };\n\nreturn [{ json: { weekNum, dayNum: day, dayName: days[dayOfWeek], session, type: 'alegria' } }];"
+      },
+      "name": "📊 Calcul session Alegria",
+      "type": "n8n-nodes-base.code",
+      "position": [480, 200],
+      "id": "calc-alegria"
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst s = data.session;\nconst etapes = s.etapes.map((e, i) => `${i+1}. ${e}`).join('\\n');\n\nconst message = `🌅 *BRIEF ALEGRIA — Séance du jour*\n━━━━━━━━━━━━━━━━━━━━━\n📅 *${data.dayName}* — Semaine ${data.weekNum}\n🎯 *Thème :* ${s.theme}\n\n*Objectif de la session (2h) :*\n${s.objectif}\n\n*📋 Étapes à suivre :*\n${etapes}\n\n*✅ Livrable attendu :*\n${s.livrable}\n\n━━━━━━━━━━━━━━━━━━━━━\n💪 *Bonne session ! Chaque ligne de workflow est un pas vers l'autonomie.*\n⏰ Rappel : 6h00 sport → 6h30 cours`;\n\nreturn [{ json: { message, session: s } }];"
+      },
+      "name": "✍️ Formater brief Alegria",
+      "type": "n8n-nodes-base.code",
+      "position": [720, 200],
+      "id": "format-alegria"
+    },
+    {
+      "parameters": {
+        "chatId": "VOTRE_CHAT_ID_TELEGRAM",
+        "text": "={{ $json.message }}",
+        "additionalFields": { "parse_mode": "Markdown" }
+      },
+      "name": "📱 Envoyer Telegram Alegria",
+      "type": "n8n-nodes-base.telegram",
+      "position": [960, 200],
+      "id": "send-alegria",
+      "credentials": { "telegramApi": { "id": "1", "name": "Telegram — NEXOR Bot" } }
+    },
+    {
+      "parameters": {
+        "jsCode": "const now = new Date();\nconst dayOfWeek = now.getDay();\nconst startDate = new Date('2026-05-12');\nconst diffDays = Math.floor((now - startDate) / (1000*60*60*24));\nconst weekNum = Math.floor(diffDays / 7) + 1;\nconst dayNum = (dayOfWeek + 6) % 7;\nconst days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];\n\nconst theoProgram = {\n  1: {\n    1: 'n8n Avancé — Expressions & JSON : maîtriser les expressions {{ }}, fonctions JS inline, manipulation JSON complexe',\n    2: 'APIs Avancées & Auth : Bearer Token, OAuth2, pagination automatique, rate limiting, gestion derreurs',\n    3: 'Sub-workflows & Architecture : modules réutilisables, exécutions parallèles, webhooks sécurisés',\n    4: 'Workflow Professionnel : rapport réseau automatisé depuis CatC/WLC, PDF, alertes Slack',\n    5: 'LIVRABLE S1 : finaliser, documenter, packager, chiffrer, démo 5 min'\n  },\n  2: {\n    1: 'Agents IA — Architecture & Mémoire : system prompt avancé, mémoire contextuelle, structured output JSON',\n    2: 'Agent Qualification Leads NEXOR : email → extraire → scorer → Notion CRM → réponse auto',\n    3: 'Agent Support IT Réseau : alerte SolarWinds → diagnostic → ticket Notion → escalade Slack',\n    4: 'RAG Basique : base de connaissances Claude + documentation Cisco, 10 questions réelles',\n    5: 'LIVRABLE S2 : agent IA documenté + démo client 10 min + prix estimé'\n  },\n  3: {\n    1: 'Make Expert — Routeurs & Iterators : router, iterator, aggregator, error handling avancé',\n    2: 'Architecture Multi-outils : n8n vs Make, CRM automatisé Make + Airtable + Gmail',\n    3: 'PROJET CLIENT NEXOR Jour 1 : architecture + 30% implémenté',\n    4: 'PROJET CLIENT NEXOR Jour 2 : 80% + documentation technique',\n    5: 'LIVRABLE S3 : projet livré + facture NEXOR émise'\n  },\n  4: {\n    1: 'Bubble.io Avancé — API Connector : Claude API + n8n webhook + données live',\n    2: 'WifiAudit AI Interface : upload + scores RF + graphiques + export PDF',\n    3: 'Stripe & Abonnements dans Bubble : 3 plans + gestion abonnements + webhook',\n    4: 'Industrialisation : template projet + grille tarification + contrat type + portfolio',\n    5: 'LIVRABLE FINAL : démo autonome 20 min + rapport évaluation complet'\n  }\n};\n\nconst week = Math.min(weekNum, 4);\nconst day = Math.min(dayNum + 1, 5);\nconst theme = theoProgram[week]?.[day] || 'Révision et approfondissement — refaire un livrable de la semaine';\n\nreturn [{ json: { weekNum, dayName: days[dayOfWeek], theme, day, type: 'theo' } }];"
+      },
+      "name": "📊 Calcul session Théo",
+      "type": "n8n-nodes-base.code",
+      "position": [480, 400],
+      "id": "calc-theo"
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst message = `🌙 *BRIEF THÉO — Séance du soir*\n━━━━━━━━━━━━━━━━━━━━━\n📅 *${data.dayName}* — Semaine ${data.weekNum}\n\n*🎯 Objectif ce soir (3h) :*\n${data.theme}\n\n*⚙️ Rappel méthode :*\n• 20h00 - 20h15 : Révision de la veille (5 questions)\n• 20h15 - 22h00 : Nouvelle notion + construction\n• 22h00 - 22h45 : Livrable réel à terminer\n• 22h45 - 23h00 : Objectif pour demain\n\n*📌 Règle d'or :* Chaque notion = construire quelque chose de fonctionnel. Pas de théorie sans pratique.\n\n━━━━━━━━━━━━━━━━━━━━━\n🔥 *C'est en soirée qu'on forge les compétences qui feront tourner NEXOR.*`;\n\nreturn [{ json: { message } }];"
+      },
+      "name": "✍️ Formater brief Théo",
+      "type": "n8n-nodes-base.code",
+      "position": [720, 400],
+      "id": "format-theo"
+    },
+    {
+      "parameters": {
+        "chatId": "VOTRE_CHAT_ID_TELEGRAM",
+        "text": "={{ $json.message }}",
+        "additionalFields": { "parse_mode": "Markdown" }
+      },
+      "name": "📱 Envoyer Telegram Théo",
+      "type": "n8n-nodes-base.telegram",
+      "position": [960, 400],
+      "id": "send-theo",
+      "credentials": { "telegramApi": { "id": "1", "name": "Telegram — NEXOR Bot" } }
+    },
+    {
+      "parameters": {
+        "jsCode": "const now = new Date();\nconst isWeekend = now.getDay() === 6 ? 'samedi' : 'dimanche';\nconst startDate = new Date('2026-05-12');\nconst weekNum = Math.floor((now - startDate) / (1000*60*60*24*7)) + 1;\n\nconst weekendPlan = {\n  samedi: {\n    matin: ['Bilan semaine passée (score /10)', '30 contacts LinkedIn personnalisés (DSI/DG)', '5 emails de prospection qualifiés', 'Préparer les cours Alegria et Théo semaine suivante'],\n    soir: ['Construction NoCode perso : reproduire les workflows de la semaine', 'Avancer sur WifiAudit AI ou projet NEXOR', 'Créer 2 posts LinkedIn pour la semaine']\n  },\n  dimanche: {\n    matin: ['Deep work NoCode : apprendre en construisant', 'Développement WifiAudit AI (endpoint ou interface)', 'Si prospect disponible : call découverte'],\n    soir: ['Bilan semaine complète + plan semaine suivante', 'Mise à jour trésorerie ORNET', 'Livraison ou amélioration projets en cours', 'Relances prospects + pipeline NEXOR']\n  }\n};\n\nconst plan = weekendPlan[isWeekend];\nconst matin = plan.matin.map((t,i) => `${i+1}. ${t}`).join('\\n');\nconst soir = plan.soir.map((t,i) => `${i+1}. ${t}`).join('\\n');\n\nconst message = `🚀 *BRIEF WEEKEND — Semaine ${weekNum}*\n━━━━━━━━━━━━━━━━━━━━━\n📅 *${isWeekend.charAt(0).toUpperCase() + isWeekend.slice(1)} — Jour NEXOR*\n\n*🌅 8h00 – 12h00 (priorité) :*\n${matin}\n\n*🌙 19h00 – 23h00 (construction) :*\n${soir}\n\n━━━━━━━━━━━━━━━━━━━━━\n*📊 Rappel objectifs :*\n• 1 contrat NEXOR signé avant fin du mois\n• WifiAudit AI : premier client payant\n• Formation : 0 session manquée\n\n💪 *Pas de weekend. Que des opportunités.*`;\n\nreturn [{ json: { message } }];"
+      },
+      "name": "✍️ Formater brief Weekend",
+      "type": "n8n-nodes-base.code",
+      "position": [480, 600],
+      "id": "format-weekend"
+    },
+    {
+      "parameters": {
+        "chatId": "VOTRE_CHAT_ID_TELEGRAM",
+        "text": "={{ $json.message }}",
+        "additionalFields": { "parse_mode": "Markdown" }
+      },
+      "name": "📱 Envoyer Telegram Weekend",
+      "type": "n8n-nodes-base.telegram",
+      "position": [720, 600],
+      "id": "send-weekend",
+      "credentials": { "telegramApi": { "id": "1", "name": "Telegram — NEXOR Bot" } }
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "method": "POST",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-api-key", "value": "={{ $vars.ANTHROPIC_API_KEY }}" },
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "body",
+              "value": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1000,\n  \"system\": \"Tu es le coach NEXOR. Tu génères un bilan hebdomadaire concis, motivant et orienté action pour Romaric, consultant réseau qui forme Alegria et Théo au NoCode/IA tout en développant NEXOR Advisory. Sois direct, bienveillant mais sans complaisance.\",\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"Génère le bilan de la semaine et le plan de la semaine suivante. Format : bilan en 3 points + 3 actions prioritaires semaine suivante. Semaine actuelle : {{ new Date().toLocaleDateString('fr-FR') }}\"\n  }]\n}"
+            }
+          ]
+        }
+      },
+      "name": "🤖 Claude — Bilan hebdo IA",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [480, 800],
+      "id": "claude-bilan"
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst text = response.content?.[0]?.text || 'Bilan non disponible';\n\nconst message = `📊 *BILAN HEBDOMADAIRE — NEXOR ADVISORY*\n━━━━━━━━━━━━━━━━━━━━━\n${text}\n━━━━━━━━━━━━━━━━━━━━━\n📅 Prochain brief formation :\n• 🌅 Alegria : demain 5h50\n• 🌙 Théo : demain 19h50\n\n*Mise à jour le tracker Excel et Notion ce soir.*`;\n\nreturn [{ json: { message } }];"
+      },
+      "name": "✍️ Formater bilan hebdo",
+      "type": "n8n-nodes-base.code",
+      "position": [720, 800],
+      "id": "format-bilan"
+    },
+    {
+      "parameters": {
+        "chatId": "VOTRE_CHAT_ID_TELEGRAM",
+        "text": "={{ $json.message }}",
+        "additionalFields": { "parse_mode": "Markdown" }
+      },
+      "name": "📱 Envoyer Bilan Hebdo",
+      "type": "n8n-nodes-base.telegram",
+      "position": [960, 800],
+      "id": "send-bilan",
+      "credentials": { "telegramApi": { "id": "1", "name": "Telegram — NEXOR Bot" } }
+    }
+  ],
+  "connections": {
+    "⏰ Trigger Matin Alegria (5h50)": { "main": [[{ "node": "📊 Calcul session Alegria", "type": "main", "index": 0 }]] },
+    "📊 Calcul session Alegria": { "main": [[{ "node": "✍️ Formater brief Alegria", "type": "main", "index": 0 }]] },
+    "✍️ Formater brief Alegria": { "main": [[{ "node": "📱 Envoyer Telegram Alegria", "type": "main", "index": 0 }]] },
+    "⏰ Trigger Soir Théo (19h50)": { "main": [[{ "node": "📊 Calcul session Théo", "type": "main", "index": 0 }]] },
+    "📊 Calcul session Théo": { "main": [[{ "node": "✍️ Formater brief Théo", "type": "main", "index": 0 }]] },
+    "✍️ Formater brief Théo": { "main": [[{ "node": "📱 Envoyer Telegram Théo", "type": "main", "index": 0 }]] },
+    "⏰ Trigger Weekend (7h50)": { "main": [[{ "node": "✍️ Formater brief Weekend", "type": "main", "index": 0 }]] },
+    "✍️ Formater brief Weekend": { "main": [[{ "node": "📱 Envoyer Telegram Weekend", "type": "main", "index": 0 }]] },
+    "⏰ Bilan Hebdo (Dim 21h)": { "main": [[{ "node": "🤖 Claude — Bilan hebdo IA", "type": "main", "index": 0 }]] },
+    "🤖 Claude — Bilan hebdo IA": { "main": [[{ "node": "✍️ Formater bilan hebdo", "type": "main", "index": 0 }]] },
+    "✍️ Formater bilan hebdo": { "main": [[{ "node": "📱 Envoyer Bilan Hebdo", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "staticData": null,
+  "tags": [{ "name": "NEXOR Formation" }, { "name": "Automatisation" }],
+  "meta": { "instanceId": "nexor-formation-automation" },
+  "_INSTRUCTIONS": {
+    "import": "Aller dans n8n → Workflows → Import from File → sélectionner ce fichier",
+    "config": [
+      "1. Créer un bot Telegram (@BotFather) → récupérer le token",
+      "2. Récupérer votre Chat ID Telegram (envoyer /start à @userinfobot)",
+      "3. Dans n8n : Settings → Credentials → Telegram API → coller le token",
+      "4. Remplacer VOTRE_CHAT_ID_TELEGRAM par votre vrai Chat ID",
+      "5. Dans n8n : Settings → Variables → Ajouter ANTHROPIC_API_KEY",
+      "6. Activer les 4 workflows (toggle en haut à droite)",
+      "7. Tester manuellement chaque trigger avec le bouton Test Workflow"
+    ]
+  }
+}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Services NEXOR Advisory : Conseil IT, Automatisation IA & NoCode, Transformation Digitale, Formation réseau.">
+<title>Services — NEXOR Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/aurora.css">
+<style>
+.services-hero {
+  padding: 100px 0 80px;
+  background: radial-gradient(ellipse 80% 60% at 30% 60%, rgba(124,58,237,.1) 0%, transparent 55%), var(--void);
+}
+.service-detail {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.service-detail:last-child { border-bottom: none; }
+.service-detail-inner {
+  max-width: 1160px; margin: 0 auto; padding: 0 32px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.service-detail-inner.reverse { direction: rtl; }
+.service-detail-inner.reverse > * { direction: ltr; }
+.service-features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+.feature-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: var(--dark); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 12px 14px;
+}
+.feature-dot {
+  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 6px;
+}
+.feature-text { font-size: 11px; color: var(--text-3); line-height: 1.6; }
+.vendor-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+@media (max-width: 768px) {
+  .service-detail-inner { grid-template-columns: 1fr; direction: ltr; }
+  .service-detail-inner.reverse { direction: ltr; }
+  .service-features { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<style>
+@keyframes nexusPulse {
+  0%,100%{filter:drop-shadow(0 0 6px rgba(252,211,77,.6))}
+  50%{filter:drop-shadow(0 0 18px rgba(252,211,77,.9))}
+}
+</style>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 80 100" width="22" height="28" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ganav" x1="0" y1="0" x2="22" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B21B6"/>
+      <stop offset="38%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,0 L0,100 L14,100 L14,22 L66,100 L80,100 L80,0 L66,0 L66,78 L14,0 Z" fill="url(#ganav)"/>
+  <polygon points="40,44 47,51 40,58 33,51" fill="#FCD34D" style="animation:nexusPulse 2.5s ease-in-out infinite"/>
+</svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-nexor">NEXOR</span>
+        <span class="nav-logo-adv">ADVISORY</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="services.html" class="nav-link active">Services</a>
+      <a href="netforge.html" class="nav-link">NetForge AI</a>
+      <a href="a-propos.html" class="nav-link">À propos</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      
+    </div>
+    <a href="contact.html" class="nav-cta">Nous contacter</a>
+    <button class="nav-mobile-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<main>
+
+<div class="aurora-band"></div>
+<section class="services-hero">
+  <div class="section-inner">
+    <div class="section-eyebrow anim-1">Nos services</div>
+    <h1 class="section-title anim-2" style="max-width:640px">Ce que NEXOR Advisory<br><em>fait pour vous</em></h1>
+    <p class="section-desc anim-3">
+      Quatre domaines d'expertise complémentaires pour couvrir l'ensemble de votre transformation numérique.
+      Des missions courtes d'audit aux engagements long terme, nous nous adaptons à votre contexte.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICE 1 -->
+<section class="service-detail" id="conseil">
+  <div class="service-detail-inner">
+    <div class="reveal">
+      <div class="pill" style="margin-bottom:16px">Conseil IT</div>
+      <h2 class="section-title">Architecture Réseau<br>&amp; Infrastructure</h2>
+      <p style="font-size:13px;color:var(--text-3);line-height:1.8;margin:16px 0 24px">
+        Audit, conception et déploiement d'infrastructures réseau d'entreprise. De la définition de l'architecture cible à la mise en production, nous garantissons une infrastructure fiable, sécurisée et évolutive.
+      </p>
+      <div class="service-features">
+        <div class="feature-item"><div class="feature-dot" style="background:var(--violet)"></div><span class="feature-text">Audit et diagnostic réseau</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--violet)"></div><span class="feature-text">Architecture LAN/WAN/WiFi</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--violet)"></div><span class="feature-text">SD-Access &amp; SD-WAN</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--violet)"></div><span class="feature-text">Cybersécurité réseau</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--violet)"></div><span class="feature-text">WiFi 6 / WiFi 7</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--violet)"></div><span class="feature-text">Cloud networking</span></div>
+      </div>
+      <div style="margin-top:24px">
+        <div style="font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-5);margin-bottom:10px">Constructeurs maîtrisés</div>
+        <div class="vendor-list">
+          <span class="pill">Cisco</span><span class="pill">Juniper</span><span class="pill">Aruba/HPE</span>
+          <span class="pill">Fortinet</span><span class="pill">Palo Alto</span><span class="pill">Huawei</span>
+          <span class="pill pill-flame">IETF/IEEE</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div style="background:var(--dark);border:1px solid var(--border);border-radius:20px;padding:36px">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--violet);margin-bottom:20px">Livrables types</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;gap:12px;align-items:center;padding:12px;background:var(--mid);border-radius:10px;border:1px solid var(--border)">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(124,58,237,.15);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">📋</div>
+            <div><div style="font-size:12px;font-weight:600;color:var(--white)">HLD — High Level Design</div><div style="font-size:10px;color:var(--text-5)">Architecture cible documentée</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;padding:12px;background:var(--mid);border-radius:10px;border:1px solid var(--border)">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(249,115,22,.1);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">🔧</div>
+            <div><div style="font-size:12px;font-weight:600;color:var(--white)">LLD — Low Level Design</div><div style="font-size:10px;color:var(--text-5)">Configurations détaillées par équipement</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;padding:12px;background:var(--mid);border-radius:10px;border:1px solid var(--border)">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(34,211,238,.08);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">🛡️</div>
+            <div><div style="font-size:12px;font-weight:600;color:var(--white)">Rapport d'audit sécurité</div><div style="font-size:10px;color:var(--text-5)">CIS / ANSSI / constructeur</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;padding:12px;background:var(--mid);border-radius:10px;border:1px solid var(--border)">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(16,185,129,.08);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">📊</div>
+            <div><div style="font-size:12px;font-weight:600;color:var(--white)">Plan de déploiement</div><div style="font-size:10px;color:var(--text-5)">Planning, migration, rollback</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 2 -->
+<section class="service-detail section-alt" id="automation">
+  <div class="service-detail-inner reverse">
+    <div class="reveal">
+      <div style="background:var(--dark);border:1px solid rgba(249,115,22,.2);border-radius:20px;padding:36px">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--flame);margin-bottom:20px">Exemples de cas d'usage</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="padding:14px 16px;background:var(--mid);border-radius:10px;border:1px solid var(--border)">
+            <div style="font-size:11px;font-weight:600;color:var(--white);margin-bottom:2px">Automatisation des tickets IT</div>
+            <div style="font-size:10px;color:var(--text-5)">Triage automatique, escalade, résolution par agents IA</div>
+          </div>
+          <div style="padding:14px 16px;background:var(--mid);border-radius:10px;border:1px solid var(--border)">
+            <div style="font-size:11px;font-weight:600;color:var(--white);margin-bottom:2px">Reporting SI automatisé</div>
+            <div style="font-size:10px;color:var(--text-5)">Consolidation des données réseau → rapport hebdomadaire automatique</div>
+          </div>
+          <div style="padding:14px 16px;background:var(--mid);border-radius:10px;border:1px solid var(--border)">
+            <div style="font-size:11px;font-weight:600;color:var(--white);margin-bottom:2px">Intégration CRM/ERP ↔ Réseau</div>
+            <div style="font-size:10px;color:var(--text-5)">Provisioning automatique des accès réseau à l'onboarding</div>
+          </div>
+          <div style="padding:14px 16px;background:var(--mid);border-radius:10px;border:1px solid var(--border)">
+            <div style="font-size:11px;font-weight:600;color:var(--white);margin-bottom:2px">Agents IA de diagnostic</div>
+            <div style="font-size:10px;color:var(--text-5)">Analyse des logs réseau en temps réel → alertes intelligentes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="pill pill-flame" style="margin-bottom:16px">Automatisation</div>
+      <h2 class="section-title">Automatisation IA<br>&amp; NoCode</h2>
+      <p style="font-size:13px;color:var(--text-3);line-height:1.8;margin:16px 0 24px">
+        Conception de workflows intelligents, agents IA et processus automatisés. Nous intégrons les meilleures technologies d'automatisation NoCode pour éliminer les tâches répétitives et accélérer vos opérations.
+      </p>
+      <div class="service-features">
+        <div class="feature-item"><div class="feature-dot" style="background:var(--flame)"></div><span class="feature-text">Workflows automatisés</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--flame)"></div><span class="feature-text">Agents IA sur mesure</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--flame)"></div><span class="feature-text">Intégration SI</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--flame)"></div><span class="feature-text">NoCode / LowCode</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--flame)"></div><span class="feature-text">Orchestration de processus</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--flame)"></div><span class="feature-text">Analyse de données</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 3 -->
+<section class="service-detail" id="transformation">
+  <div class="service-detail-inner">
+    <div class="reveal">
+      <div class="pill pill-cyan" style="margin-bottom:16px">Transformation Digitale</div>
+      <h2 class="section-title">Accompagnement<br>&amp; Conduite du changement</h2>
+      <p style="font-size:13px;color:var(--text-3);line-height:1.8;margin:16px 0 24px">
+        La technologie ne suffit pas. Nous accompagnons vos équipes dans la transformation : stratégie, adoption des outils, optimisation des processus et développement des compétences.
+      </p>
+      <div class="service-features">
+        <div class="feature-item"><div class="feature-dot" style="background:var(--cyan)"></div><span class="feature-text">Stratégie IT &amp; roadmap</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--cyan)"></div><span class="feature-text">Audit organisationnel</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--cyan)"></div><span class="feature-text">Conduite du changement</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--cyan)"></div><span class="feature-text">Optimisation des opérations</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div style="background:var(--dark);border:1px solid rgba(34,211,238,.2);border-radius:20px;padding:36px">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px">Notre approche</div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--violet);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0">1</div>
+            <div><div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">Diagnostic</div><div style="font-size:10px;color:var(--text-5)">Audit de l'existant, identification des axes de progrès</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--flame);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0">2</div>
+            <div><div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">Roadmap</div><div style="font-size:10px;color:var(--text-5)">Plan de transformation priorisé et budgété</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0">3</div>
+            <div><div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">Exécution</div><div style="font-size:10px;color:var(--text-5)">Déploiement progressif, accompagnement des équipes</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--solar);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#000;flex-shrink:0">4</div>
+            <div><div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">Autonomisation</div><div style="font-size:10px;color:var(--text-5)">Transfert de compétences, documentation, pérennité</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 4 -->
+<section class="service-detail section-alt" id="formation">
+  <div class="service-detail-inner reverse">
+    <div class="reveal">
+      <div style="background:var(--dark);border:1px solid rgba(252,211,77,.15);border-radius:20px;padding:36px">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--solar);margin-bottom:16px">Formats disponibles</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="padding:14px;background:var(--mid);border-radius:10px;border:1px solid var(--border);text-align:center">
+            <div style="font-size:18px;margin-bottom:4px">👤</div>
+            <div style="font-size:11px;font-weight:600;color:var(--white)">Individuel</div>
+            <div style="font-size:9px;color:var(--text-5);margin-top:2px">Coaching 1:1</div>
+          </div>
+          <div style="padding:14px;background:var(--mid);border-radius:10px;border:1px solid var(--border);text-align:center">
+            <div style="font-size:18px;margin-bottom:4px">👥</div>
+            <div style="font-size:11px;font-weight:600;color:var(--white)">Groupe</div>
+            <div style="font-size:9px;color:var(--text-5);margin-top:2px">Jusqu'à 10 personnes</div>
+          </div>
+          <div style="padding:14px;background:var(--mid);border-radius:10px;border:1px solid var(--border);text-align:center">
+            <div style="font-size:18px;margin-bottom:4px">🏢</div>
+            <div style="font-size:11px;font-weight:600;color:var(--white)">Intra-entreprise</div>
+            <div style="font-size:9px;color:var(--text-5);margin-top:2px">Sur site ou distanciel</div>
+          </div>
+          <div style="padding:14px;background:var(--mid);border-radius:10px;border:1px solid var(--border);text-align:center">
+            <div style="font-size:18px;margin-bottom:4px">📱</div>
+            <div style="font-size:11px;font-weight:600;color:var(--white)">En ligne</div>
+            <div style="font-size:9px;color:var(--text-5);margin-top:2px">Sessions vidéo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="pill" style="margin-bottom:16px;background:rgba(252,211,77,.08);border-color:rgba(252,211,77,.2);color:var(--solar)">Formation</div>
+      <h2 class="section-title">Formation &amp;<br>Transfert de compétences</h2>
+      <p style="font-size:13px;color:var(--text-3);line-height:1.8;margin:16px 0 24px">
+        Formations techniques sur mesure pour vos équipes IT. De l'initiation aux technologies réseau à la maîtrise de l'automatisation IA, nos programmes s'adaptent à votre niveau et à vos objectifs.
+      </p>
+      <div class="service-features">
+        <div class="feature-item"><div class="feature-dot" style="background:var(--solar)"></div><span class="feature-text">Réseaux &amp; Infrastructure</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--solar)"></div><span class="feature-text">Automatisation NoCode</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--solar)"></div><span class="feature-text">IA appliquée au SI</span></div>
+        <div class="feature-item"><div class="feature-dot" style="background:var(--solar)"></div><span class="feature-text">Cybersécurité pratique</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="section-inner" style="text-align:center">
+    <h2 class="section-title reveal"><em>Quel est votre défi ?</em></h2>
+    <p class="section-desc reveal" style="text-align:center;margin:0 auto 36px">
+      Chaque mission commence par un échange. Parlez-nous de votre contexte et nous verrons ensemble comment NEXOR Advisory peut intervenir.
+    </p>
+    <div class="reveal">
+      <a href="contact.html" class="btn btn-primary">Discutons de votre projet</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <svg viewBox="0 0 80 100" width="28" height="35" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="gaft" x1="0" y1="0" x2="80" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#5B21B6"/><stop offset="38%" stop-color="#7C3AED"/>
+              <stop offset="100%" stop-color="#F97316"/>
+            </linearGradient></defs>
+            <path d="M0,0 L0,100 L14,100 L14,22 L66,100 L80,100 L80,0 L66,0 L66,78 L14,0 Z" fill="url(#gaft)"/>
+            <polygon points="40,44 47,51 40,58 33,51" fill="#FCD34D"/>
+          </svg>
+          <div>
+            <div style="font-size:16px;font-weight:900;letter-spacing:4px;color:#fff">NEXOR</div>
+            <div style="font-size:6px;font-weight:200;letter-spacing:8px;color:#A78BFA">ADVISORY</div>
+          </div>
+        </div>
+        <p class="tagline-f">Conseil · Infrastructure · Intelligence</p>
+        <p class="tagline-f" style="margin-top:4px">120 boulevard Vincent Auriol, 75013 Paris</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="netforge.html">NetForge AI</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="services.html#conseil">Conseil IT &amp; Réseau</a>
+        <a href="services.html#automation">Automatisation IA</a>
+        <a href="services.html#transformation">Transformation Digitale</a>
+        <a href="services.html#formation">Formation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:contact@nexoradvisory.fr">contact@nexoradvisory.fr</a>
+        <a href="tel:+33749470117">07 49 47 01 17</a>
+        <a href="nexoradvisory.fr">nexoradvisory.fr</a>
+        <a href="https://www.linkedin.com/in/romaric-okemba-27833230/" target="_blank" rel="noopener">Mon profil LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="footer-bottom" style="margin-top:24px">
+      <p>© 2026 NEXOR Advisory — SASU au capital de 1 000 €</p>
+      <p>Siège social : 120 bvd Vincent Auriol, 75013 Paris</p>
+    </div>
+    <div class="footer-band" style="margin-top:20px"></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

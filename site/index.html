@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="NEXOR Advisory — Conseil IT, Automatisation IA, Infrastructure Réseau. Paris.">
+<title>Accueil — NEXOR Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/aurora.css">
+<style>
+/* Hero */
+.hero {
+  min-height: calc(100vh - 72px);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  background: radial-gradient(ellipse 80% 70% at 30% 60%, rgba(124,58,237,.1) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 60% at 75% 30%, rgba(249,115,22,.07) 0%, transparent 55%),
+              var(--void);
+}
+.hero-bg-lines {
+  position: absolute; inset: 0; opacity: .04;
+  background: repeating-linear-gradient(135deg, transparent, transparent 60px, var(--violet) 60px, var(--violet) 61px);
+}
+.hero-inner {
+  max-width: 1160px; width: 100%; margin: 0 auto; padding: 0 32px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(124,58,237,.1); border: 1px solid rgba(124,58,237,.25);
+  border-radius: 20px; padding: 6px 16px; margin-bottom: 24px;
+  font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--lavender);
+}
+.hero-title {
+  font-size: clamp(36px, 5.5vw, 68px); font-weight: 900;
+  letter-spacing: -2px; line-height: 1.05; margin-bottom: 20px;
+}
+.hero-title .grad {
+  background: var(--grad-aurora);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: 15px; font-weight: 300; color: var(--text-3); line-height: 1.8;
+  margin-bottom: 36px; max-width: 440px;
+}
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-proof {
+  display: flex; gap: 32px; flex-wrap: wrap;
+  border-top: 1px solid var(--border); padding-top: 32px;
+}
+.hero-proof-item { }
+.hero-proof-num {
+  font-size: 28px; font-weight: 900; color: var(--white); line-height: 1;
+  margin-bottom: 2px;
+}
+.hero-proof-num .accent { color: var(--violet); }
+.hero-proof-label {
+  font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-5);
+}
+.hero-visual {
+  display: flex; flex-direction: column; align-items: center;
+  animation: gradFloat 6s ease-in-out infinite;
+}
+.hero-mark-wrap {
+  position: relative; display: inline-block;
+}
+.hero-mark-glow {
+  position: absolute; inset: -40px;
+  background: radial-gradient(circle, rgba(124,58,237,.25) 0%, transparent 70%);
+  animation: gradFloat 4s ease-in-out infinite reverse;
+}
+/* Stats strip */
+.stats-strip {
+  background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 28px 0;
+}
+.stats-strip-inner {
+  max-width: 1160px; margin: 0 auto; padding: 0 32px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-size: 36px; font-weight: 900; letter-spacing: -1px; color: var(--white); line-height: 1;
+}
+.stat-num .unit { font-size: 20px; color: var(--violet); }
+.stat-label {
+  font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-5); margin-top: 4px;
+}
+/* Services grid */
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+/* Differentiators */
+.diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.diff-card {
+  background: var(--dark); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px;
+}
+.diff-card-num {
+  font-size: 48px; font-weight: 900; letter-spacing: -2px; line-height: 1;
+  background: var(--grad-aurora);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 12px;
+}
+/* CTA section */
+.cta-section {
+  background: linear-gradient(135deg, #0D0820 0%, #1E0F3F 50%, #0D0820 100%);
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(124,58,237,.12) 0%, transparent 65%);
+}
+.cta-section-inner {
+  position: relative; z-index: 1;
+  text-align: center; max-width: 640px; margin: 0 auto; padding: 0 32px;
+}
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .stats-strip-inner { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: 1fr; }
+  .diff-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<style>
+@keyframes nexusPulse {
+  0%,100%{filter:drop-shadow(0 0 6px rgba(252,211,77,.6))}
+  50%{filter:drop-shadow(0 0 18px rgba(252,211,77,.9))}
+}
+</style>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 80 100" width="22" height="28" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ganav" x1="0" y1="0" x2="22" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B21B6"/>
+      <stop offset="38%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,0 L0,100 L14,100 L14,22 L66,100 L80,100 L80,0 L66,0 L66,78 L14,0 Z" fill="url(#ganav)"/>
+  <polygon points="40,44 47,51 40,58 33,51" fill="#FCD34D" style="animation:nexusPulse 2.5s ease-in-out infinite"/>
+</svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-nexor">NEXOR</span>
+        <span class="nav-logo-adv">ADVISORY</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Accueil</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="netforge.html" class="nav-link">NetForge AI</a>
+      <a href="a-propos.html" class="nav-link">À propos</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      
+    </div>
+    <a href="contact.html" class="nav-cta">Nous contacter</a>
+    <button class="nav-mobile-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<main>
+
+<div class="aurora-band"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge anim-1">
+        <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#10B981"/></svg>
+        Cabinet de conseil IT fondé à Paris
+      </div>
+      <h1 class="hero-title anim-2">
+        L'expertise<br>qui <span class="grad">transforme</span><br>votre SI
+      </h1>
+      <p class="hero-sub anim-3">
+        Conseil IT, automatisation IA et infrastructure réseau.
+        NEXOR Advisory accompagne les entreprises dans leur transformation
+        numérique avec une expertise technique de haut niveau.
+      </p>
+      <div class="hero-ctas anim-4">
+        <a href="contact.html" class="btn btn-primary">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 4l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Parler à un expert
+        </a>
+        <a href="services.html" class="btn btn-secondary">Voir nos services</a>
+      </div>
+      <div class="hero-proof anim-5">
+        <div class="hero-proof-item">
+          <div class="hero-proof-num"><span data-target="10" data-suffix="+">10+</span></div>
+          <div class="hero-proof-label">Ans d'expertise</div>
+        </div>
+        <div class="hero-proof-item">
+          <div class="hero-proof-num" style="color:var(--flame)">7</div>
+          <div class="hero-proof-label">Constructeurs supportés</div>
+        </div>
+        <div class="hero-proof-item">
+          <div class="hero-proof-num" style="color:var(--cyan)">3</div>
+          <div class="hero-proof-label">Piliers de services</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual anim-3">
+      <div class="hero-mark-wrap">
+        <div class="hero-mark-glow"></div>
+        <svg viewBox="0 0 80 100" width="160" height="200" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 12px rgba(124,58,237,.5))">
+  <defs>
+    <linearGradient id="gahero" x1="0" y1="0" x2="160" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B21B6"/>
+      <stop offset="38%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,0 L0,100 L14,100 L14,22 L66,100 L80,100 L80,0 L66,0 L66,78 L14,0 Z" fill="url(#gahero)"/>
+  <polygon points="40,44 47,51 40,58 33,51" fill="#FCD34D" style="animation:nexusPulse 2.5s ease-in-out infinite"/>
+</svg>
+        <div style="text-align:center;margin-top:16px">
+          <div style="font-size:32px;font-weight:900;letter-spacing:8px;color:#fff">NEXOR</div>
+          <div style="height:1.5px;background:linear-gradient(90deg,transparent,rgba(124,58,237,.6),rgba(249,115,22,.5),transparent);margin:6px auto;width:140px"></div>
+          <div style="font-size:9px;font-weight:200;letter-spacing:14px;color:var(--lavender)">ADVISORY</div>
+          <div style="font-size:8px;font-weight:500;letter-spacing:2.5px;color:var(--text-5);text-transform:uppercase;margin-top:6px">Conseil · Infrastructure · Intelligence</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-strip-inner">
+    <div class="stat reveal">
+      <div class="stat-num"><span data-target="10" data-suffix="+">10+</span></div>
+      <div class="stat-label">Années d'expertise réseau</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num" style="color:var(--flame)">Multi</div>
+      <div class="stat-label">Constructeurs (Cisco, Juniper, Aruba…)</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num" style="color:var(--cyan)">IA</div>
+      <div class="stat-label">Native — Claude API · n8n · Make</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num" style="color:var(--solar)">Paris</div>
+      <div class="stat-label">France — intervention nationale</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">Ce que nous faisons</div>
+    <h2 class="section-title reveal">Quatre piliers d'expertise,<br><em>un seul partenaire</em></h2>
+    <p class="section-desc reveal" style="margin-bottom:56px">
+      De la stratégie réseau à l'automatisation IA, NEXOR Advisory couvre l'ensemble
+      de votre transformation numérique.
+    </p>
+    <div class="services-grid">
+      <div class="card reveal" style="border-left:3px solid var(--violet)">
+        <div class="card-icon" style="background:rgba(124,58,237,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#7C3AED" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="pill" style="margin-bottom:14px">Conseil IT</div>
+        <h3 class="card-title">Architecture Réseau &amp; Infrastructure</h3>
+        <p class="card-desc">Conception, audit et déploiement d'infrastructures réseau complexes. Expertise Cisco, Juniper, Aruba/HPE, Fortinet, Palo Alto et tous équipements IETF/IEEE.</p>
+        <a href="services.html#conseil" style="display:inline-block;margin-top:16px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--violet);">En savoir plus →</a>
+      </div>
+      <div class="card reveal" style="border-left:3px solid var(--flame)">
+        <div class="card-icon" style="background:rgba(249,115,22,.1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#F97316" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="pill pill-flame" style="margin-bottom:14px">Automatisation</div>
+        <h3 class="card-title">Automatisation IA &amp; NoCode</h3>
+        <p class="card-desc">Conception de workflows intelligents, agents IA et processus automatisés. Intégration des systèmes, productivité opérationnelle, réduction des tâches répétitives.</p>
+        <a href="services.html#automation" style="display:inline-block;margin-top:16px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--flame);">En savoir plus →</a>
+      </div>
+      <div class="card reveal" style="border-left:3px solid var(--cyan)">
+        <div class="card-icon" style="background:rgba(34,211,238,.08)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#22D3EE" stroke-width="1.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="pill pill-cyan" style="margin-bottom:14px">NetForge AI</div>
+        <h3 class="card-title">NetForge AI — Intelligence Réseau</h3>
+        <p class="card-desc">Outils d'assistance à la conception, à l'analyse et à l'automatisation réseau multi-constructeurs. Initiative produit en développement par NEXOR Advisory.</p>
+        <a href="netforge.html" style="display:inline-block;margin-top:16px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--cyan);">Découvrir →</a>
+      </div>
+      <div class="card reveal" style="border-left:3px solid var(--solar)">
+        <div class="card-icon" style="background:rgba(252,211,77,.08)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#FCD34D" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="pill" style="margin-bottom:14px;background:rgba(252,211,77,.08);border-color:rgba(252,211,77,.2);color:#FCD34D">Formation</div>
+        <h3 class="card-title">Transformation Digitale &amp; Formation</h3>
+        <p class="card-desc">Accompagnement stratégique, conduite du changement, transfert de compétences IT et coaching technique pour vos équipes.</p>
+        <a href="services.html#formation" style="display:inline-block;margin-top:16px;font-size:10px;font-weight:600;letter-spacing:1px;color:#FCD34D;">En savoir plus →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFÉRENCIATION -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">Pourquoi NEXOR Advisory</div>
+    <h2 class="section-title reveal">La combinaison que<br><em>personne d'autre ne propose</em></h2>
+    <p class="section-desc reveal" style="margin-bottom:56px">
+      NEXOR Advisory est le seul cabinet à combiner une expertise réseau multi-constructeurs de haut niveau avec une maîtrise native de l'IA et de l'automatisation NoCode.
+    </p>
+    <div class="diff-grid">
+      <div class="diff-card reveal">
+        <div class="diff-card-num">01</div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:8px">Expertise technique profonde</h3>
+        <p style="font-size:12px;color:var(--text-3);line-height:1.8">Plus de 10 ans sur des infrastructures réseau complexes. Cisco CatC, WLC 9800, SD-Access, ISE, Wi-Fi 6/7 — avec les certifications qui vont avec.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-card-num" style="-webkit-text-fill-color:unset;color:var(--flame)">02</div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:8px">IA &amp; Automatisation natives</h3>
+        <p style="font-size:12px;color:var(--text-3);line-height:1.8">Pas de consultants qui "découvrent" l'IA. NEXOR Advisory a construit ses propres outils IA internes et les déploie pour ses clients.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-card-num" style="-webkit-text-fill-color:unset;color:var(--cyan)">03</div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:8px">Indépendant des constructeurs</h3>
+        <p style="font-size:12px;color:var(--text-3);line-height:1.8">Nous conseillons la meilleure solution pour votre contexte — Cisco, Juniper, Aruba, Fortinet ou tout autre. Pas de partenariat commercial qui biaise l'analyse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section">
+  <div class="cta-section-inner">
+    <div class="section-eyebrow reveal" style="justify-content:center">Prêt à commencer ?</div>
+    <h2 class="section-title reveal" style="text-align:center">Un audit gratuit<br><em>de votre infrastructure</em></h2>
+    <p class="section-desc reveal" style="text-align:center;max-width:480px;margin:0 auto 36px">
+      Échangeons 30 minutes sur vos défis IT et voyons comment NEXOR Advisory peut vous aider à les résoudre.
+    </p>
+    <div class="reveal" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-primary">Prendre rendez-vous</a>
+      <a href="a-propos.html" class="btn btn-secondary">Découvrir NEXOR Advisory</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <svg viewBox="0 0 80 100" width="28" height="35" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="gaft" x1="0" y1="0" x2="80" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#5B21B6"/><stop offset="38%" stop-color="#7C3AED"/>
+              <stop offset="100%" stop-color="#F97316"/>
+            </linearGradient></defs>
+            <path d="M0,0 L0,100 L14,100 L14,22 L66,100 L80,100 L80,0 L66,0 L66,78 L14,0 Z" fill="url(#gaft)"/>
+            <polygon points="40,44 47,51 40,58 33,51" fill="#FCD34D"/>
+          </svg>
+          <div>
+            <div style="font-size:16px;font-weight:900;letter-spacing:4px;color:#fff">NEXOR</div>
+            <div style="font-size:6px;font-weight:200;letter-spacing:8px;color:#A78BFA">ADVISORY</div>
+          </div>
+        </div>
+        <p class="tagline-f">Conseil · Infrastructure · Intelligence</p>
+        <p class="tagline-f" style="margin-top:4px">120 boulevard Vincent Auriol, 75013 Paris</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="netforge.html">NetForge AI</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="services.html#conseil">Conseil IT &amp; Réseau</a>
+        <a href="services.html#automation">Automatisation IA</a>
+        <a href="services.html#transformation">Transformation Digitale</a>
+        <a href="services.html#formation">Formation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:contact@nexoradvisory.fr">contact@nexoradvisory.fr</a>
+        <a href="tel:+33749470117">07 49 47 01 17</a>
+        <a href="nexoradvisory.fr">nexoradvisory.fr</a>
+        <a href="https://www.linkedin.com/in/romaric-okemba-27833230/" target="_blank" rel="noopener">Mon profil LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="footer-bottom" style="margin-top:24px">
+      <p>© 2026 NEXOR Advisory — SASU au capital de 1 000 €</p>
+      <p>Siège social : 120 bvd Vincent Auriol, 75013 Paris</p>
+    </div>
+    <div class="footer-band" style="margin-top:20px"></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<title>NEXOR — LinkedIn Banner v3</title><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',Arial,sans-serif;background:#060411;color:#fff}
+.band{height:3px;background:linear-gradient(90deg,#5B21B6,#7C3AED,#F97316,#22D3EE,#FCD34D)}
+.sec{padding:60px 48px;border-bottom:1px solid rgba(124,58,237,.1)}
+.wrap{max-width:1040px;margin:0 auto}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.g6{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.bx{border-radius:16px;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.bv{background:#0D0820;border:1px solid #2D1657}
+.bd{background:#130926;border:1px solid #2D1657}
+.bm{background:#1E0F3F;border:1px solid #3D2070}
+.bl{background:#FAFAF9;border:1px solid #E9D5FF}
+.cat{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#7C3AED;margin-bottom:8px}
+.cap{font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#7C6FAF;text-align:center;margin-top:6px}
+.bt{font-size:11px;color:#A78BFA;line-height:1.85}
+.bt strong{color:#fff;font-weight:600}
+.row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.cc{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.rule{display:flex;gap:10px;font-size:11px;color:#A78BFA;line-height:1.7;margin-bottom:10px;align-items:flex-start}
+.rule::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.do::before{background:#10B981}.dn::before{background:#EF4444}.dn{color:#6B5B7A}
+.sw{border-radius:10px;overflow:hidden;border:1px solid #2D1657}
+.swc{height:44px}.swi{padding:8px 11px;background:#130926}
+.swn{font-size:10px;font-weight:700;color:#fff;margin-bottom:1px}
+.swh{font-size:9px;font-family:monospace;color:#7C6FAF}
+.swu{font-size:8px;color:#4A3A6A;margin-top:2px;line-height:1.4}
+.code{background:#0D0820;border-radius:8px;padding:14px 18px;font-family:monospace;font-size:10px;line-height:1.9;color:#22D3EE;border-left:2px solid #7C3AED}
+a{color:#22D3EE;text-decoration:none}
+
+body{background:#111;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.bn{width:1188px;height:297px;background:linear-gradient(135deg,#06050F 0%,#1A0A35 38%,#0D0820 68%,#06050F 100%);position:relative;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.bn::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 120% at 14% 50%,rgba(124,58,237,.14) 0%,transparent 60%),radial-gradient(ellipse 35% 70% at 55% 20%,rgba(249,115,22,.07) 0%,transparent 55%),radial-gradient(ellipse 40% 100% at 85% 70%,rgba(34,211,238,.04) 0%,transparent 55%);pointer-events:none}
+</style></head><body>
+<div class="bn">
+  <div style="height:3px;background:linear-gradient(90deg,#5B21B6,#7C3AED,#F97316,#22D3EE,#FCD34D)"></div>
+  <div style="position:absolute;inset:3px 0 3px 0;display:flex;align-items:center;justify-content:space-between;padding:0 56px;z-index:1">
+
+    <!-- GAUCHE : Logo + tagline -->
+    <div style="display:flex;align-items:center;gap:22px">
+      <svg viewBox="0 0 80 100" width="60" height="75" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="galb" x1="0" y1="0" x2="60" y2="75" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#5B21B6"/><stop offset="38%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#F97316"/></linearGradient></defs><path d="M0,0 L0,100 L14,100 L14,22 L66,100 L80,100 L80,0 L66,0 L66,78 L14,0 Z" fill="url(#galb)"/><polygon points="40,44 47,51 40,58 33,51" fill="#FCD34D"/></svg>
+      <div>
+        <div style="font-size:50px;font-weight:900;letter-spacing:10px;color:#fff;line-height:.9">NEXOR</div>
+        <div style="height:1.5px;background:linear-gradient(90deg,rgba(124,58,237,.7),rgba(249,115,22,.6),transparent);margin:7px 0"></div>
+        <div style="font-size:12px;font-weight:200;letter-spacing:17px;color:#A78BFA">ADVISORY</div>
+        <div style="font-size:9.5px;font-weight:500;letter-spacing:2.5px;color:#7C6FAF;text-transform:uppercase;margin-top:6px">Conseil · Infrastructure · Intelligence</div>
+      </div>
+    </div>
+
+    <!-- SÉPARATEUR VERTICAL -->
+    <div style="width:1px;height:110px;background:linear-gradient(180deg,transparent,rgba(124,58,237,.4),rgba(249,115,22,.3),transparent)"></div>
+
+    <!-- DROITE : 4 axes de service — version cabinet premium, sans noms d'outils -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div style="width:5px;height:5px;border-radius:50%;background:#7C3AED;flex-shrink:0;margin-top:4px"></div>
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#C4B5FD;letter-spacing:.5px">Conseil IT & Architecture Réseau</div>
+          <div style="font-size:8px;color:#4A3A6A;margin-top:2px;letter-spacing:.5px">Stratégie · Audit · Expertise multi-constructeurs</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div style="width:5px;height:5px;border-radius:50%;background:#F97316;flex-shrink:0;margin-top:4px"></div>
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#C4B5FD;letter-spacing:.5px">Automatisation IA & NoCode</div>
+          <div style="font-size:8px;color:#4A3A6A;margin-top:2px;letter-spacing:.5px">Workflows · Agents IA · Intégration SI · Productivité</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div style="width:5px;height:5px;border-radius:50%;background:#22D3EE;flex-shrink:0;margin-top:4px"></div>
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#C4B5FD;letter-spacing:.5px">NetForge AI — Intelligence Réseau</div>
+          <div style="font-size:8px;color:#4A3A6A;margin-top:2px;letter-spacing:.5px">Conception · Diagnostic · Documentation · Multi-vendeurs</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div style="width:5px;height:5px;border-radius:50%;background:#FCD34D;flex-shrink:0;margin-top:4px"></div>
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#C4B5FD;letter-spacing:.5px">Transformation Digitale & Formation</div>
+          <div style="font-size:8px;color:#4A3A6A;margin-top:2px;letter-spacing:.5px">Accompagnement · Coaching · Développement des équipes</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- Pas de coordonnées dans le banner — LinkedIn affiche déjà le profil -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#7C3AED 30%,#F97316 70%,transparent)"></div>
+</div>
+</body></html>

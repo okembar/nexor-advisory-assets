@@ -1,0 +1,47 @@
+{
+  "brand": "NEXOR Advisory",
+  "palette": "Aurora v1.0",
+  "created": "2026-05-13",
+  "confidential": true,
+  "colors": {
+    "dark": {
+      "void":     { "value": "#0D0820", "usage": "Hero backgrounds, modal overlays" },
+      "deep":     { "value": "#130926", "usage": "Main page background, navigation" },
+      "midnight": { "value": "#1E0F3F", "usage": "Cards, sections, elevated surfaces" },
+      "dusk":     { "value": "#2D1657", "usage": "Borders, dividers, subtle lines" }
+    },
+    "brand": {
+      "violet":   { "value": "#7C3AED", "role": "PRIMARY", "usage": "CTAs, links, primary actions, IA features" },
+      "flame":    { "value": "#F97316", "role": "SECONDARY", "usage": "Pricing, energy, urgency, secondary actions" },
+      "cyan":     { "value": "#22D3EE", "role": "ACCENT", "usage": "Network data, live metrics, code, tech features" }
+    },
+    "support": {
+      "solar":    { "value": "#FCD34D", "usage": "Premium highlights, awards, special badges" },
+      "emerald":  { "value": "#10B981", "usage": "Success states, positive data, completed items" },
+      "alert":    { "value": "#EF4444", "usage": "Errors, critical warnings, destructive actions" },
+      "amber":    { "value": "#F59E0B", "usage": "Warnings, pending states" }
+    },
+    "neutral": {
+      "white":    { "value": "#FFFFFF", "usage": "Primary text on dark backgrounds" },
+      "lavender": { "value": "#C4B5FD", "usage": "Secondary text on dark backgrounds" },
+      "muted":    { "value": "#7C6FAF", "usage": "Disabled states, captions, timestamps" },
+      "ivory":    { "value": "#FAFAF9", "usage": "Document backgrounds, light mode base" },
+      "pale":     { "value": "#F5F3FF", "usage": "Light mode surfaces, form inputs" },
+      "borderL":  { "value": "#E9D5FF", "usage": "Borders in light mode" }
+    }
+  },
+  "gradients": {
+    "brand":     "linear-gradient(135deg, #7C3AED, #F97316)",
+    "signature": "linear-gradient(90deg, #7C3AED, #F97316, #22D3EE, #FCD34D)",
+    "hero":      "linear-gradient(135deg, #0D0820 0%, #1E0F3F 50%, #130926 100%)",
+    "cta":       "linear-gradient(135deg, #7C3AED, #6D28D9)",
+    "flameCta":  "linear-gradient(135deg, #F97316, #EA580C)"
+  },
+  "typography": {
+    "fontSans": "'Segoe UI', system-ui, -apple-system, Arial, sans-serif",
+    "fontMono": "'Consolas', 'Monaco', 'Courier New', monospace",
+    "weights": { "regular": 400, "medium": 500, "bold": 700, "black": 900 }
+  },
+  "spacing": { "xs": "4px", "sm": "8px", "md": "16px", "lg": "24px", "xl": "40px" },
+  "radius":  { "sm": "6px", "md": "10px", "lg": "16px", "full": "9999px" }
+}

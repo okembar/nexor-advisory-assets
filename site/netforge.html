@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="NetForge AI — Plateforme d'intelligence réseau multi-constructeurs par NEXOR Advisory.">
+<title>NetForge AI — NEXOR Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/aurora.css">
+<style>
+.nf-hero {
+  padding: 100px 0 80px;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(34,211,238,.07) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 50% at 20% 40%, rgba(124,58,237,.08) 0%, transparent 55%),
+              var(--void);
+}
+.nf-logo {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--dark); border: 1px solid rgba(34,211,238,.2);
+  border-radius: 14px; padding: 14px 20px; margin-bottom: 32px;
+}
+.nf-name { font-size: 24px; font-weight: 900; letter-spacing: 4px; color: #fff; }
+.nf-name span { color: var(--violet); }
+.nf-tag { font-size: 7px; font-weight: 200; letter-spacing: 6px; color: var(--cyan); margin-top: 2px; }
+.dev-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(249,115,22,.06); border: 1px solid rgba(249,115,22,.2);
+  border-radius: 20px; padding: 6px 16px;
+  font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  color: #FB923C; margin-bottom: 24px;
+}
+.modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.module-card {
+  background: var(--dark); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 20px;
+  transition: border-color .2s;
+}
+.module-card:hover { border-color: var(--cyan); }
+.module-num { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--text-5); margin-bottom: 8px; }
+.module-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.module-desc { font-size: 11px; color: var(--text-3); line-height: 1.7; }
+@media (max-width: 768px) {
+  .modules-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<style>
+@keyframes nexusPulse {
+  0%,100%{filter:drop-shadow(0 0 6px rgba(252,211,77,.6))}
+  50%{filter:drop-shadow(0 0 18px rgba(252,211,77,.9))}
+}
+</style>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 80 100" width="22" height="28" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ganav" x1="0" y1="0" x2="22" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B21B6"/>
+      <stop offset="38%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,0 L0,100 L14,100 L14,22 L66,100 L80,100 L80,0 L66,0 L66,78 L14,0 Z" fill="url(#ganav)"/>
+  <polygon points="40,44 47,51 40,58 33,51" fill="#FCD34D" style="animation:nexusPulse 2.5s ease-in-out infinite"/>
+</svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-nexor">NEXOR</span>
+        <span class="nav-logo-adv">ADVISORY</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="netforge.html" class="nav-link active">NetForge AI</a>
+      <a href="a-propos.html" class="nav-link">À propos</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      
+    </div>
+    <a href="contact.html" class="nav-cta">Nous contacter</a>
+    <button class="nav-mobile-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<main>
+
+<div class="aurora-band"></div>
+<section class="nf-hero">
+  <div class="section-inner">
+    <div class="dev-badge anim-1">
+      <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="none" stroke="#FB923C" stroke-width="1.5"/><circle cx="4" cy="4" r="1.5" fill="#FB923C"/></svg>
+      Initiative produit en développement
+    </div>
+    <div class="nf-logo anim-2">
+      <svg viewBox="0 0 80 100" width="28" height="35" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ganf" x1="0" y1="0" x2="28" y2="35" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B21B6"/>
+      <stop offset="38%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,0 L0,100 L14,100 L14,22 L66,100 L80,100 L80,0 L66,0 L66,78 L14,0 Z" fill="url(#ganf)"/>
+  <polygon points="40,44 47,51 40,58 33,51" fill="#FCD34D" style="animation:nexusPulse 2.5s ease-in-out infinite"/>
+</svg>
+      <div>
+        <div class="nf-name">NET<span>FORGE</span></div>
+        <div class="nf-tag">AI PLATFORM · by NEXOR Advisory</div>
+      </div>
+    </div>
+    <h1 class="section-title anim-3" style="max-width:640px">Plateforme d'intelligence<br><em>réseau multi-constructeurs</em></h1>
+    <p class="section-desc anim-4" style="max-width:580px">
+      NetForge AI est l'initiative produit de NEXOR Advisory visant à créer des outils d'assistance
+      à la conception, à l'analyse et à l'automatisation réseau — indépendamment du constructeur.
+    </p>
+    <div class="anim-5" style="margin-top:32px;padding:16px 20px;background:rgba(249,115,22,.05);border:1px solid rgba(249,115,22,.2);border-radius:12px;max-width:580px">
+      <div style="font-size:10px;font-weight:700;color:#FB923C;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Positionnement actuel</div>
+      <p style="font-size:12px;color:var(--text-3);line-height:1.7">
+        NetForge AI est en phase de développement. Certains modules sont déjà opérationnels en usage interne chez NEXOR Advisory. La plateforme sera progressivement ouverte aux clients. Intéressé(e) ? Contactez-nous pour être informé(e) du lancement.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">La vision</div>
+    <h2 class="section-title reveal">Pourquoi NetForge AI ?</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px" class="reveal">
+      <div class="card">
+        <div style="font-size:28px;margin-bottom:12px">⏱️</div>
+        <h3 class="card-title">Gagner du temps</h3>
+        <p class="card-desc">Générer une configuration complète en quelques minutes plutôt qu'en plusieurs heures. Moins d'erreurs, plus de valeur ajoutée.</p>
+      </div>
+      <div class="card">
+        <div style="font-size:28px;margin-bottom:12px">🏗️</div>
+        <h3 class="card-title">Multi-constructeurs natif</h3>
+        <p class="card-desc">La même logique, la même qualité, pour Cisco, Juniper, Aruba ou tout autre constructeur IETF/IEEE. Fini la dépendance vendor.</p>
+      </div>
+      <div class="card">
+        <div style="font-size:28px;margin-bottom:12px">🤖</div>
+        <h3 class="card-title">IA spécialisée réseau</h3>
+        <p class="card-desc">Des modèles entraînés sur l'expertise réelle de NEXOR Advisory — pas de l'IA généraliste appliquée superficiellement au réseau.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">Les modules</div>
+    <h2 class="section-title reveal">7 modules en développement</h2>
+    <p class="section-desc reveal" style="margin-bottom:48px">Chaque module adresse un problème spécifique du métier réseau. La priorité de développement suit la valeur client.</p>
+    <div class="modules-grid">
+      <div class="module-card reveal" style="border-left:3px solid var(--violet)">
+        <div class="module-num">MODULE 01</div>
+        <div class="module-title">Network Designer</div>
+        <div class="module-desc">Architecture réseau générée à partir d'une description en langage naturel. Topologie, segmentation, dimensionnement.</div>
+        <div class="pill" style="margin-top:12px;font-size:8px">En développement</div>
+      </div>
+      <div class="module-card reveal" style="border-left:3px solid var(--violet)">
+        <div class="module-num">MODULE 02</div>
+        <div class="module-title">IP &amp; VLAN Planner</div>
+        <div class="module-desc">Plan d'adressage VLSM automatique. Définissez vos besoins, obtenez un plan IP complet et documenté.</div>
+        <div class="pill" style="margin-top:12px;font-size:8px">En développement</div>
+      </div>
+      <div class="module-card reveal" style="border-left:3px solid var(--flame)">
+        <div class="module-num">MODULE 03</div>
+        <div class="module-title">Config Generator</div>
+        <div class="module-desc">Configurations complètes et prêtes à déployer pour tout équipement réseau. Cisco IOS-XE, Junos, AOS-CX, FortiOS, PAN-OS…</div>
+        <div class="pill pill-flame" style="margin-top:12px;font-size:8px">En développement</div>
+      </div>
+      <div class="module-card reveal" style="border-left:3px solid var(--flame)">
+        <div class="module-num">MODULE 04</div>
+        <div class="module-title">WiFi Designer</div>
+        <div class="module-desc">Design RF pour tous les points d'accès. Calcul de couverture, canaux, SSID, QoS. WiFi 6 et 7 natifs.</div>
+        <div class="pill pill-flame" style="margin-top:12px;font-size:8px">En développement</div>
+      </div>
+      <div class="module-card reveal" style="border-left:3px solid var(--cyan);border:2px solid var(--cyan)">
+        <div class="module-num" style="color:var(--cyan)">MODULE 05 ★ PRIORITAIRE</div>
+        <div class="module-title">Log Analyzer &amp; Troubleshooter</div>
+        <div class="module-desc">Collez vos logs réseau. L'IA identifie la cause racine, diagnostique le problème et propose la configuration corrective. Multi-constructeurs.</div>
+        <div class="pill pill-cyan" style="margin-top:12px;font-size:8px">Bêta interne</div>
+      </div>
+      <div class="module-card reveal" style="border-left:3px solid var(--cyan)">
+        <div class="module-num">MODULE 06</div>
+        <div class="module-title">Security Auditor</div>
+        <div class="module-desc">Audit automatisé de la configuration réseau selon les référentiels CIS, ANSSI et les guides durcissement constructeur.</div>
+        <div class="pill pill-cyan" style="margin-top:12px;font-size:8px">En développement</div>
+      </div>
+      <div class="module-card reveal" style="border-left:3px solid var(--solar);grid-column:span 1">
+        <div class="module-num" style="color:var(--solar)">MODULE 07</div>
+        <div class="module-title">Doc Generator</div>
+        <div class="module-desc">Génération automatique de la documentation technique : HLD, LLD, plans d'adressage, matrices VLAN. Export Word et PDF.</div>
+        <div class="pill" style="margin-top:12px;font-size:8px;background:rgba(252,211,77,.08);border-color:rgba(252,211,77,.2);color:var(--solar)">Planifié</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSTRUCTEURS -->
+<section class="section section-alt">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-eyebrow reveal" style="justify-content:center">Compatibilité</div>
+    <h2 class="section-title reveal">Indépendant du constructeur</h2>
+    <p class="section-desc reveal" style="text-align:center;margin:0 auto 48px">
+      NetForge AI est conçu pour fonctionner avec n'importe quel équipement réseau, du moment qu'il respecte les standards IETF/IEEE.
+    </p>
+    <div class="reveal" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:48px">
+      <span class="pill" style="font-size:12px;padding:8px 18px">Cisco IOS-XE</span>
+      <span class="pill" style="font-size:12px;padding:8px 18px">Cisco CatC</span>
+      <span class="pill" style="font-size:12px;padding:8px 18px">Juniper Junos</span>
+      <span class="pill" style="font-size:12px;padding:8px 18px">Aruba/HPE AOS</span>
+      <span class="pill pill-flame" style="font-size:12px;padding:8px 18px">Fortinet FortiOS</span>
+      <span class="pill pill-flame" style="font-size:12px;padding:8px 18px">Palo Alto PAN-OS</span>
+      <span class="pill pill-cyan" style="font-size:12px;padding:8px 18px">Huawei VRP</span>
+      <span class="pill pill-cyan" style="font-size:12px;padding:8px 18px">Nokia SR OS</span>
+      <span class="pill" style="font-size:12px;padding:8px 18px;background:rgba(16,185,129,.08);border-color:rgba(16,185,129,.2);color:var(--emerald)">IETF/IEEE standard</span>
+    </div>
+    <a href="contact.html" class="btn btn-primary reveal">Être informé du lancement</a>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <svg viewBox="0 0 80 100" width="28" height="35" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="gaft" x1="0" y1="0" x2="80" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#5B21B6"/><stop offset="38%" stop-color="#7C3AED"/>
+              <stop offset="100%" stop-color="#F97316"/>
+            </linearGradient></defs>
+            <path d="M0,0 L0,100 L14,100 L14,22 L66,100 L80,100 L80,0 L66,0 L66,78 L14,0 Z" fill="url(#gaft)"/>
+            <polygon points="40,44 47,51 40,58 33,51" fill="#FCD34D"/>
+          </svg>
+          <div>
+            <div style="font-size:16px;font-weight:900;letter-spacing:4px;color:#fff">NEXOR</div>
+            <div style="font-size:6px;font-weight:200;letter-spacing:8px;color:#A78BFA">ADVISORY</div>
+          </div>
+        </div>
+        <p class="tagline-f">Conseil · Infrastructure · Intelligence</p>
+        <p class="tagline-f" style="margin-top:4px">120 boulevard Vincent Auriol, 75013 Paris</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="netforge.html">NetForge AI</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="services.html#conseil">Conseil IT &amp; Réseau</a>
+        <a href="services.html#automation">Automatisation IA</a>
+        <a href="services.html#transformation">Transformation Digitale</a>
+        <a href="services.html#formation">Formation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:contact@nexoradvisory.fr">contact@nexoradvisory.fr</a>
+        <a href="tel:+33749470117">07 49 47 01 17</a>
+        <a href="nexoradvisory.fr">nexoradvisory.fr</a>
+        <a href="https://www.linkedin.com/in/romaric-okemba-27833230/" target="_blank" rel="noopener">Mon profil LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="footer-bottom" style="margin-top:24px">
+      <p>© 2026 NEXOR Advisory — SASU au capital de 1 000 €</p>
+      <p>Siège social : 120 bvd Vincent Auriol, 75013 Paris</p>
+    </div>
+    <div class="footer-band" style="margin-top:20px"></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

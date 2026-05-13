@@ -1,0 +1,163 @@
+/* ═══════════════════════════════════════════════════════════════
+   NEXOR Advisory — Design System Aurora v1.0
+   À importer dans tous les projets web NEXOR / NetForge AI
+   ════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ── PALETTE AURORA ─────────────────────────────────────── */
+
+  /* Dark Series */
+  --nx-void:           #0D0820;   /* Fond ultra-sombre (hero, modales) */
+  --nx-deep:           #130926;   /* Fond principal (pages, nav) */
+  --nx-midnight:       #1E0F3F;   /* Cards, sections */
+  --nx-dusk:           #2D1657;   /* Bordures, dividers */
+
+  /* Brand Colors */
+  --nx-violet:         #7C3AED;   /* PRIMARY — IA, CTAs, liens */
+  --nx-violet-hover:   #6D28D9;   /* Hover du violet */
+  --nx-violet-light:   #9333EA;   /* Variant clair */
+  --nx-violet-ll:      #A78BFA;   /* Texte secondaire sur sombre */
+  --nx-violet-surface: #EDE9FE;   /* Surface light mode */
+
+  --nx-flame:          #F97316;   /* SECONDARY — énergie, prix */
+  --nx-flame-hover:    #EA580C;   /* Hover flame */
+  --nx-flame-light:    #FB923C;   /* Variant clair */
+  --nx-flame-surface:  #FFEDD5;   /* Surface light mode */
+
+  --nx-cyan:           #22D3EE;   /* ACCENT — réseau, data live */
+  --nx-cyan-hover:     #06B6D4;   /* Hover cyan */
+  --nx-cyan-light:     #67E8F9;   /* Variant clair */
+  --nx-cyan-surface:   #ECFEFF;   /* Surface light mode */
+
+  /* Support Colors */
+  --nx-solar:          #FCD34D;   /* Highlights, premium badges */
+  --nx-emerald:        #10B981;   /* Succès, états positifs */
+  --nx-alert:          #EF4444;   /* Erreurs, critique */
+  --nx-amber:          #F59E0B;   /* Avertissements */
+
+  /* Neutral */
+  --nx-white:          #FFFFFF;   /* Texte primaire sur sombre */
+  --nx-lavender:       #C4B5FD;   /* Texte secondaire sur sombre */
+  --nx-muted:          #7C6FAF;   /* Disabled, captions */
+  --nx-ivory:          #FAFAF9;   /* Fond documents / light mode */
+  --nx-pale:           #F5F3FF;   /* Surfaces light mode */
+  --nx-border-light:   #E9D5FF;   /* Bordures light mode */
+
+  /* ── GRADIENTS ──────────────────────────────────────────── */
+  --nx-gradient-brand:     linear-gradient(135deg, #7C3AED, #F97316);
+  --nx-gradient-signature: linear-gradient(90deg, #7C3AED, #F97316, #22D3EE, #FCD34D);
+  --nx-gradient-hero:      linear-gradient(135deg, #0D0820 0%, #1E0F3F 50%, #130926 100%);
+  --nx-gradient-card:      linear-gradient(135deg, #1E0F3F, #130926);
+  --nx-gradient-cta:       linear-gradient(135deg, #7C3AED, #6D28D9);
+  --nx-gradient-flame-cta: linear-gradient(135deg, #F97316, #EA580C);
+
+  /* ── TYPOGRAPHY ─────────────────────────────────────────── */
+  --nx-font-sans:   'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  --nx-font-mono:   'Consolas', 'Monaco', 'Courier New', monospace;
+
+  --nx-text-xs:     8px;
+  --nx-text-sm:     10px;
+  --nx-text-base:   12px;
+  --nx-text-md:     14px;
+  --nx-text-lg:     18px;
+  --nx-text-xl:     24px;
+  --nx-text-2xl:    32px;
+  --nx-text-hero:   52px;
+
+  /* ── SPACING ────────────────────────────────────────────── */
+  --nx-space-xs:    4px;
+  --nx-space-sm:    8px;
+  --nx-space-md:    16px;
+  --nx-space-lg:    24px;
+  --nx-space-xl:    40px;
+
+  /* ── RADIUS ─────────────────────────────────────────────── */
+  --nx-radius-sm:   6px;
+  --nx-radius-md:   10px;
+  --nx-radius-lg:   16px;
+  --nx-radius-full: 9999px;
+
+  /* ── SHADOWS ────────────────────────────────────────────── */
+  --nx-shadow-sm:   0 2px 8px rgba(124, 58, 237, 0.15);
+  --nx-shadow-md:   0 8px 24px rgba(124, 58, 237, 0.2);
+  --nx-shadow-lg:   0 20px 60px rgba(13, 8, 32, 0.6);
+  --nx-shadow-glow: 0 0 30px rgba(124, 58, 237, 0.3);
+}
+
+/* ── UTILITY CLASSES ──────────────────────────────────────── */
+
+/* Backgrounds */
+.nx-bg-void      { background: var(--nx-void); }
+.nx-bg-deep      { background: var(--nx-deep); }
+.nx-bg-midnight  { background: var(--nx-midnight); }
+.nx-bg-violet    { background: var(--nx-violet); }
+.nx-bg-flame     { background: var(--nx-flame); }
+.nx-bg-cyan      { background: var(--nx-cyan); }
+.nx-bg-ivory     { background: var(--nx-ivory); }
+
+/* Text */
+.nx-text-violet  { color: var(--nx-violet); }
+.nx-text-flame   { color: var(--nx-flame); }
+.nx-text-cyan    { color: var(--nx-cyan); }
+.nx-text-solar   { color: var(--nx-solar); }
+.nx-text-emerald { color: var(--nx-emerald); }
+.nx-text-muted   { color: var(--nx-muted); }
+.nx-text-lavender{ color: var(--nx-lavender); }
+
+/* Buttons */
+.nx-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: var(--nx-radius-sm);
+  font-family: var(--nx-font-sans);
+  font-weight: 700;
+  font-size: var(--nx-text-sm);
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.nx-btn:hover { transform: translateY(-1px); box-shadow: var(--nx-shadow-md); }
+
+.nx-btn-primary  { background: var(--nx-gradient-cta); color: #fff; }
+.nx-btn-flame    { background: var(--nx-gradient-flame-cta); color: #fff; }
+.nx-btn-outline  { background: transparent; color: var(--nx-violet); border: 1.5px solid var(--nx-violet); }
+.nx-btn-ghost    { background: rgba(124,58,237,.1); color: var(--nx-violet-ll); }
+
+/* Cards */
+.nx-card {
+  background: var(--nx-midnight);
+  border: 1px solid var(--nx-dusk);
+  border-radius: var(--nx-radius-lg);
+  padding: var(--nx-space-lg);
+}
+.nx-card-light {
+  background: var(--nx-ivory);
+  border: 1px solid var(--nx-border-light);
+  border-radius: var(--nx-radius-lg);
+  padding: var(--nx-space-lg);
+}
+
+/* Badge */
+.nx-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: var(--nx-radius-full);
+  font-size: var(--nx-text-xs);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.nx-badge-violet { background: rgba(124,58,237,.15); color: var(--nx-violet-ll); border: 1px solid rgba(124,58,237,.3); }
+.nx-badge-flame  { background: rgba(249,115,22,.12); color: var(--nx-flame-light); border: 1px solid rgba(249,115,22,.25); }
+.nx-badge-cyan   { background: rgba(34,211,238,.08); color: var(--nx-cyan); border: 1px solid rgba(34,211,238,.2); }
+.nx-badge-emerald{ background: rgba(16,185,129,.1); color: #34D399; border: 1px solid rgba(16,185,129,.25); }
+.nx-badge-alert  { background: rgba(239,68,68,.1); color: #FCA5A5; border: 1px solid rgba(239,68,68,.25); }
+
+/* Accent band */
+.nx-accent-band {
+  height: 3px;
+  background: var(--nx-gradient-signature);
+  border-radius: 2px;
+}
