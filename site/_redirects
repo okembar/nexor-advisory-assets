@@ -1,0 +1,6 @@
+# Force HTTP → HTTPS
+http://nexoradvisory.fr/*        https://nexoradvisory.fr/:splat  301!
+http://www.nexoradvisory.fr/*    https://nexoradvisory.fr/:splat  301!
+
+# Force www → racine (déjà géré par Netlify mais on sécurise)
+https://www.nexoradvisory.fr/*   https://nexoradvisory.fr/:splat  301!
